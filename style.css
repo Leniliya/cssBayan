@@ -1,0 +1,73 @@
+body {
+  box-sizing: border-box;
+  width: 60%;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+  display: none;
+}
+
+.accordion-wrapper {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #323232;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh 0;
+  border-top: solid 1px #ccc;
+  cursor: pointer;
+}
+
+input:checked + label + .accordion-content {
+  padding: 2vh;
+  height: 20vw;
+}
+
+.cross-icon {
+  transform: rotate(0deg);
+  transition: all ease-out 0.5s;
+}
+
+input:checked + .accordion-header .cross-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  overflow: hidden;
+  height: 0;
+  transition: all ease-out 0.5s;
+}
+
+.meme-image-wrapper {
+  margin: 0 auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 20vw;
+  width: 50vw;
+}
+
+.first-meme {
+background-image: url("./images/meme-1.jpg");
+}
+
+.second-meme {
+background-image: url("./images/meme-2.jpg");
+}
+
+.third-meme {
+background-image: url("./images/meme-3.jpg");
+}
+
+.fourth-meme {
+background-image: url("./images/meme-4.jpg");
+}
+
+.fifth-meme {
+background-image: url("./images/meme-5.jpg");
+}
