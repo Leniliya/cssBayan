@@ -10,6 +10,10 @@ input {
   display: none;
 }
 
+label {
+  cursor: pointer;
+}
+
 label:active {
   color: #03809c;
 }
@@ -30,7 +34,6 @@ label:active .accordion-content {
   justify-content: space-between;
   padding: 2vh 0;
   border-top: solid 0.1vh #ccc;
-  cursor: pointer;
 }
 
 input:checked + label .accordion-content {
