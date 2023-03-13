@@ -1,0 +1,173 @@
+body {
+  box-sizing: border-box;
+  width: 60%;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+
+input {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+label:active {
+  color: #03809c;
+}
+
+label:active .accordion-content {
+  filter: opacity(60%);
+}
+
+.accordion-wrapper {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #666;
+  transition: color ease-out 0.5s;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh 0;
+  border-top: solid 0.1vh #ccc;
+}
+
+input:checked + label .accordion-content {
+  padding: 2vh;
+  height: 25vw;
+}
+
+.cross-icon {
+  transform: rotate(0deg);
+  transition: transform ease-out 0.5s;
+}
+
+input:checked + label .cross-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  overflow: hidden;
+  height: 0;
+  transition: all ease-out 0.5s;
+}
+
+.meme-image-wrapper {
+  margin: 0 auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 25vw;
+  width: 50vw;
+}
+
+.first-meme {
+background-image: url("./images/meme-1.jpg");
+}
+
+.second-meme {
+background-image: url("./images/meme-2.jpg");
+}
+
+.third-meme {
+background-image: url("./images/meme-3.jpg");
+}
+
+.fourth-meme {
+background-image: url("./images/meme-4.jpg");
+}
+
+.fifth-meme {
+background-image: url("./images/meme-5.jpg");
+}
+
+@media(hover:hover) {
+  .accordion-wrapper:hover {
+    color: #000;
+  }
+  
+  label:hover .accordion-content {
+    padding: 2vh;
+    height: 25vw;
+  }
+  
+  input:hover + label .cross-icon {
+    transform: rotate(45deg);
+  }
+  
+}
+
+@media (max-width: 1200px) {
+  body {
+    width: 70%;
+    font-size: 1.3rem;
+  }
+  
+  input:checked + label .accordion-content {
+    height: 35vw;
+  }
+  
+  .meme-image-wrapper {
+    height: 35vw;
+    width: 70vw;
+  }
+  
+  @media(hover:hover) {
+    label:hover .accordion-content {
+      height: 35vw;
+    }
+  }
+}
+
+@media (max-width: 820px) {
+  body {
+    width: 80%;
+    font-size: 1.1rem;
+  }
+    
+  input:checked + label .accordion-content {
+    height: 40vw;
+  }
+  
+  .meme-image-wrapper {
+    height: 40vw;
+  }
+  
+  @media(hover:hover) {
+    label:hover .accordion-content {
+      height: 40vw;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  body {
+    width: 90%;
+    font-size: 0.8rem;
+  }
+    
+  input:checked + label .accordion-content {
+    height: 60vw;
+  }
+  
+  .meme-image-wrapper {
+    height: 60vw;
+    width: 80vw;
+  }
+  
+  @media(hover:hover) {
+    label:hover .accordion-content {
+      height: 60vw;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    font-size: 0.7rem;
+  }
+}
