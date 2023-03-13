@@ -10,10 +10,19 @@ input {
   display: none;
 }
 
+label:active {
+  color: #03809c;
+}
+
+label:active .accordion-content {
+  filter: opacity(60%);
+}
+
 .accordion-wrapper {
   font-weight: bold;
   font-size: 1.2em;
-  color: #323232;
+  color: #666;
+  transition: color ease-out 0.5s;
 }
 
 .accordion-header {
@@ -24,17 +33,17 @@ input {
   cursor: pointer;
 }
 
-input:checked + label + .accordion-content {
+input:checked + label .accordion-content {
   padding: 2vh;
   height: 25vw;
 }
 
 .cross-icon {
   transform: rotate(0deg);
-  transition: all ease-out 0.5s;
+  transition: transform ease-out 0.5s;
 }
 
-input:checked + .accordion-header .cross-icon {
+input:checked + label .cross-icon {
   transform: rotate(45deg);
 }
 
@@ -73,19 +82,41 @@ background-image: url("./images/meme-4.jpg");
 background-image: url("./images/meme-5.jpg");
 }
 
+@media(hover:hover) {
+  .accordion-wrapper:hover {
+    color: #000;
+  }
+  
+  label:hover .accordion-content {
+    padding: 2vh;
+    height: 25vw;
+  }
+  
+  input:hover + label .cross-icon {
+    transform: rotate(45deg);
+  }
+  
+}
+
 @media (max-width: 1200px) {
   body {
     width: 70%;
     font-size: 1.3rem;
   }
   
-  input:checked + label + .accordion-content {
+  input:checked + label .accordion-content {
     height: 35vw;
   }
   
   .meme-image-wrapper {
     height: 35vw;
     width: 70vw;
+  }
+  
+  @media(hover:hover) {
+    label:hover .accordion-content {
+      height: 35vw;
+    }
   }
 }
 
@@ -95,12 +126,18 @@ background-image: url("./images/meme-5.jpg");
     font-size: 1.1rem;
   }
     
-  input:checked + label + .accordion-content {
+  input:checked + label .accordion-content {
     height: 40vw;
   }
   
   .meme-image-wrapper {
     height: 40vw;
+  }
+  
+  @media(hover:hover) {
+    label:hover .accordion-content {
+      height: 40vw;
+    }
   }
 }
 
@@ -110,13 +147,19 @@ background-image: url("./images/meme-5.jpg");
     font-size: 0.8rem;
   }
     
-  input:checked + label + .accordion-content {
+  input:checked + label .accordion-content {
     height: 60vw;
   }
   
   .meme-image-wrapper {
     height: 60vw;
     width: 80vw;
+  }
+  
+  @media(hover:hover) {
+    label:hover .accordion-content {
+      height: 60vw;
+    }
   }
 }
 
